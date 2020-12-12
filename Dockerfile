@@ -7,7 +7,7 @@ COPY LICENSE README.md /
 COPY tools/ /tools/
 COPY build.sh /build.sh
 RUN /build.sh
-RUN rm -rf /tools /build.sh
 
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+FROM ubuntu:20.04
+COPY --from=0 /tools/target/release/agogo /usr/bin/agogo
+ENTRYPOINT ["/usr/bin/agogo"]

@@ -16,7 +16,3 @@ export PATH="$CARGO_HOME/bin:$PATH"
 
 cd /tools
 cargo build --release
-
-mv /tools/target/release/agogo /usr/bin/agogo
-
-rm -rf /rustup
