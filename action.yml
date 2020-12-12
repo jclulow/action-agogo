@@ -5,6 +5,9 @@ inputs:
   colour:
     description: 'What colour should it be?'
     default: 'green'
+  secret:
+    description: 'Access token for buildomat service?'
+    required: true
 runs:
   using: 'docker'
   image: 'docker://jclulow/buildomat:latest'
@@ -13,3 +16,4 @@ runs:
   env:
     WHOM: 'THEE!'
     COLOUR_ENV: ${{ inputs.colour }}
+    SECRET: ${{ inputs.secret }}
