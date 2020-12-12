@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-RUN apt install curl bash
+RUN apt-get -y update && apt-get -y install curl bash
 
 COPY LICENSE README.md /
 
