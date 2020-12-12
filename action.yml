@@ -7,7 +7,7 @@ inputs:
     default: 'green'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://jclulow/buildomat:latest'
   args:
     - ${{ inputs.colour }}
   env:
