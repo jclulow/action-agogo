@@ -2,6 +2,10 @@ FROM alpine:3.10
 
 COPY LICENSE README.md /
 
-COPY entrypoint.sh /entrypoint.sh
+COPY tools/ /tools/
+COPY build.sh /build.sh
+RUN /build.sh
+RUN rm -rf /tools /build.sh
 
+COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

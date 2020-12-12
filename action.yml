@@ -1,12 +1,15 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'Action Agogo!'
+description: 'Trying out container-based actions -- do not use!'
+author: 'Joshua M. Clulow <josh@sysmgr.org>'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  colour:
+    description: 'What colour should it be?'
+    default: 'green'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.colour }}
+  env:
+    WHOM: 'THEE!'
+    COLOUR_ENV: ${{ inputs.colour }}
