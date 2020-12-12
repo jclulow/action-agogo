@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -o xtrace
 set -o errexit
@@ -7,7 +7,7 @@ set -o pipefail
 export RUSTUP_HOME=/rustup
 export CARGO_HOME=$RUSTUP_HOME
 
-curl -sSf https://sh.rustup.rs | sh -s -- \
+curl -sSf https://sh.rustup.rs | bash -s -- \
     -y \
     --default-toolchain stable \
     --no-modify-path
