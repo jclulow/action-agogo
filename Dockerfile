@@ -1,7 +1,6 @@
-FROM alpine:3.10
+FROM ubuntu:20.04
 
-RUN apk --no-cache add curl
-RUN apk --no-cache add bash
+RUN apt install curl bash
 
 COPY LICENSE README.md /
 
