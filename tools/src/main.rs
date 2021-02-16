@@ -23,7 +23,7 @@ fn main() -> Result<()> {
     script += "pkg install -q git\n";
     script += &format!("mkdir -p '{}'\n", getenv("GITHUB_WORKSPACE")?);
     script += &format!("cd '{}'\n", getenv("GITHUB_WORKSPACE")?);
-    script += &format!("git clone '{}/{}.git'\n",
+    script += &format!("git clone '{}/{}.git' .\n",
         getenv("GITHUB_SERVER_URL")?, getenv("GITHUB_REPOSITORY")?);
     script += &format!("git fetch origin '{}'\n", getenv("GITHUB_SHA")?);
     script += "git checkout FETCH_HEAD\n";
