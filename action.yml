@@ -5,8 +5,11 @@ inputs:
   script:
     description: 'bash script to run in the guest'
     required: true
+  baseurl:
+    description: 'base URL for buildomat service'
+    required: true
   secret:
-    description: 'Access token for buildomat service?'
+    description: 'access token for buildomat service'
     required: true
 runs:
   using: 'docker'
